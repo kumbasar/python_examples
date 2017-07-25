@@ -123,3 +123,85 @@ print("This code executes!")
 ##############################################
 
 print(set([3,2,3,1,5]))
+
+##############################################
+
+#username = input("Enter username:")
+#print(username)
+
+##############################################
+students = []
+def add_student(name,student_id=123):
+    student = {"name": name, "student_id": student_id }
+    students.append(student)
+    print(students)
+
+add_student("Bo",1)
+add_student("Zo")
+
+##############################################
+
+def var_args(name, *args):
+    print(name)
+    print(args)
+
+var_args("volkan",2,None,False,"bla bla")
+
+##############################################
+
+def var_kargs(name, **kwargs):
+    print(name)
+    print(kwargs["description"],kwargs["feedback"],kwargs["subscriber"])
+
+var_kargs("volkan",description="bla bla",feedback=None,subscriber=True)
+
+##############################################
+
+def save_file(value):
+    try:
+        f = open("test.txt","a")
+        f.write(value + "\n")
+        f.close()
+    except Exception as error:
+        print("Could not save file.")
+        print(error)
+
+def read_file():
+    try:
+        f = open("test.txt","r")
+        for value in f.readlines():
+            print(value)
+        f.close()
+    except Exception as error:
+        print("Could not read file", error)
+
+save_file("test")
+save_file("volkan")
+
+read_file()
+
+#######################################################
+
+def read_values():
+    try:
+        f=open("test.txt","r")
+        for student in read_value(f):
+            print("->",student)
+        f.close()
+    except Exception:
+        print("Could not read file")
+
+def read_value(f):
+    for line in f:
+        yield line
+
+
+read_values()
+
+######################################################
+
+double = lambda x: x * 2
+
+print(double(2))
+
+######################################################
