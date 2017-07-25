@@ -101,8 +101,9 @@ print (student.values())
 try:
     last_name = student["blabla"]
     print(last_name)
-except KeyError:
+except KeyError as error:
     print("Error finding blabla")
+    print(error)
 except TypeError:
     print("Type Error blabla")
 except Exception:
@@ -115,6 +116,10 @@ try:
     last_name = student["last_name"]
     print(last_name)
 except KeyError:
-    print("Error finding blabla")
+    print("Error finding last_name")
 
 print("This code executes!")
+
+##############################################
+
+print(set([3,2,3,1,5]))
